@@ -1,0 +1,7 @@
+import { ArrowUpRight, Mail, Phone } from 'lucide-react'
+import { Link } from 'react-router-dom'
+import { siteData } from '../../data/siteData'
+
+export default function Footer() {
+  return <footer className="footer"><div className="container"><div className="footer-top"><div><span className="eyebrow">Let’s make room for more</span><h2 className="display">A better space is closer than you think.</h2></div><Link className="footer-arrow" to="/contact"><ArrowUpRight size={30} /></Link></div><div className="footer-bottom"><div><Link className="brand footer-brand" to="/"><span className="brand-mark">N</span><span>{siteData.company.name}</span></Link><p>{siteData.company.serviceArea}</p></div><div className="footer-contact"><a href={`tel:${siteData.company.phone}`}><Phone size={15} />{siteData.company.phone}</a><a href={`mailto:${siteData.company.email}`}><Mail size={15} />{siteData.company.email}</a></div><div className="footer-social">{siteData.socialLinks.map((social) => <a key={social.label} href={social.href}>{social.label} <ArrowUpRight size={13} /></a>)}</div></div><p className="demo-disclaimer">Demo website template. Northline Studio is a fictional example business.</p></div></footer>
+}
